@@ -1,0 +1,51 @@
+Windows上安装git
+$ git config --global user.name"Your name"   #创建用户名 //jea0
+$ git config --global user.email"email@example.com"    #用户email  //835755354qq@gmail.com
+
+#git config命令的 --global参数,表示这台机器上的所有git仓库都用这个配置
+
+$ mkdir learngit        #创建git仓库
+$ cd learngit           #打开创建的仓库
+$ pwd                   #显示当前目录
+$ git init              #把仓库变为可管理的git仓库
+
+#把文件放到learngit 目录下，也就是放到git仓库
+
+$ git add file        #git add把file文件添加到git仓库，可多次使用
+$ git commit -m "wrote a readme file"       #git commit把文件提交到git仓库，可一次提交多个文件
+
+#git commit后面 -m"content" 是本次提交的说明
+
+$ git status             #查看当前git仓库的状态
+$ git diff               #查看最近修改
+
+#建议git commit之前git status确认仓库状态，之后git status确认working directory clean
+
+$ git log                #查看全部修改历史
+$ git log --pretty=oneline  #前面是sha1加密的commit id版本号
+$ git reset --hard HEAD^    #回退到上一个版本
+
+#用 HEAD 表示当前版本，上一个版本是 HEAD^ ,上上个版本是 HEAD^^ 往上一百个表示为 HEAD~100
+#--hard 后面也可以跟版本号，表示回退到哪个版本
+
+$ cat file            #查看文件内容
+$ git reflog            #记录每次命令
+
+# 用git log 查看提交历史，确定回退到哪个版本
+# 用git reflog查看命令历史，确定恢复到未来哪个版本
+
+$ git checkout --file        #丢弃工作区的修改
+$ git reset HEAD file        #把暂存区的修改撤销的，重新放回工作区
+
+#撤销修改仅限于本地撤销，推送到远程仓库之后GG
+
+$ rm file        #删除文件
+$ git rm test.txt
+$ git commit -m"content"     #从版本库中删除文件
+$ git checkout -- file      #从版本库里恢复删除的文件
+
+$ ssh-keygen -t rsa -C"eamil@example.com"       #生成本机的SSH密匙
+#在GitHub添加SSH密匙，并建立储存库
+$ git remote add origin git@github.com:jeaaaa/storage        #把本地项目添加到storage仓库
+$ git push origin master        #把本地master推送到GitHub
+
