@@ -1,6 +1,6 @@
 Windows上安装git
-$ git config --global user.name"Your name"   #创建用户名 //jea0
-$ git config --global user.email"email@example.com"    #用户email  //835755354qq@gmail.com
+$ git config --global user.name"Your name"   #创建用户名 
+$ git config --global user.email"email@example.com"    #用户email  
 
 #git config命令的 --global参数,表示这台机器上的所有git仓库都用这个配置
 
@@ -49,3 +49,9 @@ $ ssh-keygen -t rsa -C"eamil@example.com"       #生成本机的SSH密匙
 $ git remote add origin git@github.com:jeaaaa/storage        #把本地项目添加到storage仓库
 $ git push origin master        #把本地master推送到GitHub
 
+#Windows下把git和vscode都要添加到环境变量里面，简便方法为默认目录直接安装
+#如果改变了默认安装路径，需要将git手动添加到环境变量里
+
+$ git clone （Your remote storage address）         #从远程仓库拉取文件
+
+ 
