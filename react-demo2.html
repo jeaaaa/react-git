@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSX语法</title>
+</head>
+<body>
+    <div id="reactContanier"></div>
+    <script src="./common/react.js"></script>
+    <script src="./common/react-dom.js"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.8/browser.js"></script>  
+    <script type="text/babel">
+
+        var HelloComponert=React.createClass({   //创建组件
+            render:function(){        //将模板专为HTML并插入到指定的DOM节点
+                return <h1>Hello {this.props.name?this.props.name:'world'}</h1>    //支持传递三元、二元表达式
+            }
+        });
+        ReactDOM.render(        //渲染到DOM
+            <HelloComponert />,
+            document.getElementById('reactContanier')
+        );
+    
+    </script>
+</body>
+</html>

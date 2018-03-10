@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单bind复用</title>
+</head>
+<body>
+        <div id="demo"></div>
+        <script src="./common/react.js"></script>
+        <script src="./common/react-dom.js"></script>
+        <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+        <script type="text/babel">
+            var SForm=React.createClass({
+                getInitialState:function(){
+                        return{
+                            username:'',
+                            check:true,
+                            gender:'man'
+                        }
+                    },
+                change:function(event){
+                        var newState={};
+                        newState[event.target.name]=event.target.name=="check"?event.target.check:event.target.value;
+                        this.setState(newState);
+                        console.log(newState);
+                    },    
+                submitHand:function(e){    //传e禁止表单默认行为
+                    e.preventDefault();
+                    var is =this.state.check?'是':'不是';
+                    var gender=this.state.gender;
+                    alert(this.state.username+is+gender);
+                },
+                render:function(){
+                    return (
+                        <form onSubmit={this.submitHand}>
+                            <label htmlFor="username">请输入姓名：</label>
+                            <input type="text" name="username" id="username" onChange={this.change} value={this.state.username}/>
+                            <br/>
+                            <label htmlFor="checkbox">是或否：</label>
+                            <input type="checkbox" name="check" id="check" onChange={this.change} checked={this.state.check}/>
+                            <br/>
+                            <label htmlFor="choose">请输入姓名：</label>
+                            <select name="gender" value={this.state.gender} onChange={this.change}>
+                                <option value="man">man</option>
+                                <option value="woman">woman</option>
+                            </select>
+                            <br/>
+                            <button type="submit">提交</button>
+                        </form>
+                    )
+                }
+            });
+            ReactDOM.render(<SForm/>,document.getElementById('demo'));
+        </script>   
+</body>
+</html>

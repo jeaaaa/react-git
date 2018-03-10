@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小组件</title>
+</head>
+<body>
+        <div id="demo"></div>
+        <script src="./common/react.js"></script>
+        <script src="./common/react-dom.js"></script>
+        <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+        <script type="text/babel">
+            var SmallComponent=React.createClass({
+                getInitialState:function (){
+                    return {opacity:1}
+                },
+                componentDidMount:function(){     //需要在组件里进行变化的时候用state
+                    setInterval(function(){
+                        var opacity=this.state.opacity;
+                        opacity -= .05;
+                        if(opacity<0.1){
+                            opacity=1.0;
+                        }
+                        this.setState({
+                            opacity:opacity
+                        })
+                    }.bind(this),100);    //bind绑定
+                },
+                render:function(){     //两个{}代表对象 ，render一定要是纯粹的组件结构，无任何逻辑代码
+                    return (
+                        <div style={{opacity:this.state.opacity}}>        
+                            <h1>闪闪惹人爱{this.props.name}</h1>
+                        </div>
+                    )
+                }
+            })
+            ReactDOM.render(<SmallComponent name="233"/>,document.getElementById('demo'))
+        </script> 
+</body>
+</html>
