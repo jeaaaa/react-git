@@ -7,11 +7,11 @@ const buttonStyle = {
 class Counter extends Component {
 
   constructor(props) {
-    console.log('enter constructor: ' + props.caption);
-    super(props);
+    // console.log('enter constructor: ' + props.caption);
+    super(props);     //调用父类的构造函数
     this.onClickIncrementButton = this.onClickIncrementButton.bind(this);
     this.onClickDecrementButton = this.onClickDecrementButton.bind(this);
-    this.state = {count: props.initValue}
+    this.state = {count: props.initValue}       //初始化值，二元运算
   }
 
 
@@ -28,7 +28,7 @@ class Counter extends Component {
   }
 
   onClickIncrementButton() {
-    this.setState({count: this.state.count + 1});
+    this.setState({count: this.state.count + 1});    //this.setState更新state值
   }
 
   onClickDecrementButton() {
@@ -39,10 +39,10 @@ class Counter extends Component {
     return (nextProps.caption !== this.props.caption) ||
            (nextState.count !== this.state.count);
   }
-
+  
   render() {
     console.log('enter render ' + this.props.caption);
-    const {caption} = this.props;
+    const {caption} = this.props;        //通过this.props获得传入caption的值
     return (
       <div>
         <button style={buttonStyle} onClick={this.onClickIncrementButton}>+</button>
@@ -53,12 +53,12 @@ class Counter extends Component {
   }
 }
 
-// Counter.propTypes = {
-//   caption: PropTypes.string.isRequired,
-//   initValue: PropTypes.number
+// Counter.propTypes = {     //组件属性检测
+//   caption: React.PropTypes.string.isRequired,
+//   initValue: React.PropTypes.number
 // };
 
-Counter.defaultProps = {
+Counter.defaultProps = {  //设定默认值
   initValue: 1
 };
 

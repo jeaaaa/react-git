@@ -2,3 +2,17 @@
 const buttonStyle = {     //组件内定义样式
   margin: '10px'
 }; 
+
+prop是从外部传递给组件的数据，也是组件对外的接口
+
+当prop的类型不是字符串类型时，在JSX中必须用花括号{}把prop值包住，所以style的值有两层花括号，外层花括号代表是JSX的语法，内层的花括号代表这是一个对象常量。
+
+state 代表组件内部状态，目的是记录自身数据变化
+
+props 用于定义外部接口，state用于记录内部状态
+
+组件生命周期：
+装载过程调用函数：.constructor
+                .getInitialState
+                .getDefaultProps
+                .componentWillMount
