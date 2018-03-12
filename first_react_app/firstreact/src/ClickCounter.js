@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ClickCounter extends Component {
+class ClickCounter extends Component {           //新建组件
 
   constructor(props) {
     super(props);
@@ -11,13 +11,11 @@ class ClickCounter extends Component {
   }
 
   onClickButton() {
-    this.setState({count: this.state.count + 1});
+    this.setState({count: this.state.count + 1});      //状态改变值
   }
 
   render() {
-    const counterStyle = {
-      margin: '16px'
-    }
+    const counterStyle = {margin: '16px'}
     return (
       <div style={counterStyle}>
         <button onClick={this.onClickButton}>Click Me</button>
@@ -29,5 +27,5 @@ class ClickCounter extends Component {
   }
 }
 
-export default ClickCounter;
+export default ClickCounter;      //默认出口
 
