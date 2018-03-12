@@ -1,0 +1,4 @@
+
+const buttonStyle = {     //组件内定义样式
+  margin: '10px'
+}; 

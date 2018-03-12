@@ -14,21 +14,12 @@ class Counter extends Component {
     this.state = {count: props.initValue}
   }
 
-  /*
-  getInitialState() {
-    console.log('enter getInitialState');
-  }
-
-  getDefaultProps() {
-    console.log('enter getDefaultProps');
-  }
-  */
 
   componentWillReceiveProps(nextProps) {
     console.log('enter componentWillReceiveProps ' + this.props.caption)
   }
 
-  componentWillMount() {
+  componentWillMount() {    //组件将要挂载
     console.log('enter componentWillMount ' + this.props.caption);
   }
 

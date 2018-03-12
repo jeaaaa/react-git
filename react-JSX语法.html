@@ -12,7 +12,7 @@
     <script src="./common/react-dom.js"></script>
     <script src="https://cdn.bootcss.com/babel-core/5.8.8/browser.js"></script>  
     <script type="text/babel">
-
+        //在JSX中使用的“元素”不局限于HTML中的元素，可以是任何一个React组件
         var HelloComponert=React.createClass({   //创建组件
             render:function(){        //将模板专为HTML并插入到指定的DOM节点
                 return <h1>Hello {this.props.name?this.props.name:'world'}</h1>    //支持传递三元、二元表达式
