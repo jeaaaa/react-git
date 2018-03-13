@@ -12,7 +12,9 @@ state 代表组件内部状态，目的是记录自身数据变化
 props 用于定义外部接口，state用于记录内部状态
 
 组件生命周期：
-装载过程调用函数：.constructor
-                .getInitialState
-                .getDefaultProps
-                .componentWillMount
+装载过程调用函数：.constructor           ES6中每个类的构造函数 
+                .getInitialState        初始化组件，只有使用React.createClass创造组件才会产生
+                .getDefaultProps        同上，返回props的初始值
+                .componentWillMount     
+                .render                 render函数应该是一个纯函数，完全根据this.state和this.props来决定返回的结果，
+                .componentDidMount      渲染完成之后调用

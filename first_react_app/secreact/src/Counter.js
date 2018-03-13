@@ -4,7 +4,7 @@ const buttonStyle = {
   margin: '10px'
 };
 
-class Counter extends Component {
+class Counter extends Component {      //声明组件
 
   constructor(props) {
     // console.log('enter constructor: ' + props.caption);
