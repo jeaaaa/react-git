@@ -1,0 +1,2 @@
+npm install --save-dev webpack@3.6   指定安装版本  -dev保存到开发环境
+npm init 初始化npm
