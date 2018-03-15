@@ -23,7 +23,7 @@ class Counter extends Component {      //声明组件
     console.log('enter componentWillMount ' + this.props.caption);
   }
 
-  componentDidMount() {
+  componentDidMount() {      //已经加载完成
     console.log('enter componentDidMount ' + this.props.caption);
   }
 
