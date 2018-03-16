@@ -3,7 +3,7 @@ import Counter from './Counter.js';
 
 const style = {
   margin: '100px',
-  background:'#233333'
+  background:'red'
 };
 //Counter直接传入react的组件
 class ControlPanel extends Component {

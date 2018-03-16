@@ -28,13 +28,18 @@ class Counter extends Component {      //声明组件
   }
 
   onClickIncrementButton() {
-    this.setState({count: this.state.count + 1});    //this.setState更新state值
+    this.updateCount(true);
   }
 
   onClickDecrementButton() {
-    this.setState({count: this.state.count - 1});
+    this.updateCount(false);
   }
-
+  updateCount(isIncrement){
+    const previousValue=this.state.count;
+    const mewValue=isIncrement?previousValue+1:previousValue-1;
+    this.setState({count:newValue})
+    this.props.onUpdate(newValue,previousValue)
+  }
   shouldComponentUpdate(nextProps, nextState) {
     return (nextProps.caption !== this.props.caption) ||
            (nextState.count !== this.state.count);
@@ -53,10 +58,11 @@ class Counter extends Component {      //声明组件
   }
 }
 
-// Counter.propTypes = {     //组件属性检测
-//   caption: React.PropTypes.string.isRequired,
-//   initValue: React.PropTypes.number
-// };
+Counter.propTypes = {     //组件属性检测
+    caption:PropTypes.string.isRequired,
+    initValue:PropTypes.number,
+    onUpdate:PropTypes.func
+};
 
 Counter.defaultProps = {  //设定默认值
   initValue: 1

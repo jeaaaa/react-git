@@ -19,7 +19,10 @@ props 用于定义外部接口，state用于记录内部状态
                 .render                 render函数应该是一个纯函数，完全根据this.state和this.props来决定返回的结果，
                 .componentDidMount      渲染完成之后调用
 更新过程函数： .componentWillReceiveProps 
-              .shuoldComponentUpdate      决定一个组件什么时候不需要渲染，需要返回布尔值
-              .componentWillUpdate
+              .shuoldComponentUpdate      决定一个组件什么时候不需要渲染，需要返回布尔值，避免重新渲染
+              .componentWillUpdate        
               .render                     决定渲染什么，需要返回结果用于构造DOM
-              .componentDidUpdate           
+              .componentDidUpdate      
+              nextProps 代表这一次渲染传入的props值
+              this.props 代表上一次渲染时的props值     
+卸载过程：componentWillUnmount  当组件从DOM树上删除掉之前被调用
