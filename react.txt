@@ -25,4 +25,4 @@ props 用于定义外部接口，state用于记录内部状态
               .componentDidUpdate      
               nextProps 代表这一次渲染传入的props值
               this.props 代表上一次渲染时的props值     
-卸载过程：componentWillUnmount  当组件从DOM树上删除掉之前被调用
+卸载过程：componentWillUnmount   当组件从DOM树上删除掉之前被调用
