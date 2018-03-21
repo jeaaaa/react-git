@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "nojs-react": "^1.0.57",
     "webpack": "^3.6.0"
   },
   "devDependencies": {},
