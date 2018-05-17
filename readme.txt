@@ -1,5 +1,3 @@
-git text
-first change readme.text
-second change git status
-这回试一哈中文，
-Git stupid nerd
+第一次使用Git
+
+这是一个自用的杂货铺
