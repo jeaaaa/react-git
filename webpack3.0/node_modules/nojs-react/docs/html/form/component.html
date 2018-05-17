@@ -1,0 +1,22 @@
+<div id="demo-nav"></div>
+<div class="mb30">通过React Component创建表单</div>
+<div id="demo-form-wrap" class="mb30"></div>
+
+<pre><code class="language-javascript"><script type="text/code">
+import {React, render} from 'nojs-react'
+import {Form, Input, InputGroup} from 'nj/form'
+
+const MyForm = React.createClass({
+    render () {
+        return (
+        <Form action="" method="post" className="nj-form">
+            <div><Input className="text" required /></div>
+            <div><Input className="text" type="email" required /></div>
+            <button className="nj-button">提交</button>
+        </Form>
+        )
+    }
+})
+render(<MyForm/>, document.getElementById('demo-form-wrap'))
+</script></code>
+</pre>

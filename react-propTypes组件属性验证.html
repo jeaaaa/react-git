@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件属性验证</title>
+</head>
+<body>
+        <div id="demo"></div>
+        <script src="./common/react.js"></script>
+        <script src="./common/react-dom.js"></script>
+        <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+        <script type="text/babel">
+            var MyTitle= React.createClass({
+                
+                getDefaultProps:function(){                   //设定默认属性
+                    return {title:'hello wocao'}
+                },
+                propTypes:{      //成员属性
+                    title:React.PropTypes.string.isRequired,     //限制title属性的条件
+                    //.isRequired 表示组件必须指定的属性
+                } ,
+                
+                render:function(){
+                    return (<h2>{this.props.title}</h2>)
+                }
+            });
+            var data='123';
+            ReactDOM.render(<MyTitle title={data}/>,document.getElementById('demo'));
+        </script>
+</body>
+</html>
