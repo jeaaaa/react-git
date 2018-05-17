@@ -3,13 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-<<<<<<< HEAD
   "dependencies": {},
   "devDependencies": {
-=======
-  "dependencies": {
-    "nojs-react": "^1.0.57",
->>>>>>> 4b8a4e8bc1641a5667c3b85c30321b6bb37e0c51
     "webpack": "^3.6.0"
   },
   "scripts": {
