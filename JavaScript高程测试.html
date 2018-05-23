@@ -81,7 +81,23 @@
         // console.log(num);
 
         // console.log(new Date(Date.parse("6/17/1993")))
-        console.log(Date.now())
+        // console.log(Date.now())
+
+        // function sum(num1 , num2){
+        //     return num1+num2;
+        // }
+        // var anothersum=sum;
+        // var sum=null;
+        // // console.log(sum(10,20))
+        // console.log(anothersum(10,20))
+
+        function somefunction(sfunction,sargument){
+            return sfunction(sargument);
+        }
+        function add10(num){
+            return num+10;
+        }
+        console.log(somefunction(add10,50));
     </script>
 </body>
 </html>
