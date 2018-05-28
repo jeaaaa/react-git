@@ -188,3 +188,53 @@ caller 保存着调用当前函数的函数的引用
 
 函数length和prototype属性
 length表示函数希望接收的命名参数的个数
+prototype是保存他们所有实例的方法
+每个函数都包含两个非继承而来的方法，apply()和call()。都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值
+apply()方法接收两个参数，一个是在其中运行函数的作用域，另一个是参数数组。第二个参数可以是array实例或者arguments对象
+call() 传递给函数的参数必须组个列举出来
+apply()和call() 能够扩充函数的作用域
+bind() 创建一个函数实例，其this值会被绑定到传给bind()函数的值
+
+boolean.number.String
+每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而能够调用方法来操作数据
+自动创建的基本包装类型的对象，只存在与一行代码执行瞬间，然后立即被销毁，不能在运行的时候为基本类型添加属性和方法
+
+number类型
+toFixed() 按照指定的小数位返回数值的字符串表示，按浏览器规则四舍五入
+toExponential() 科学计数法表示
+toPrecision() 传入位数自动决定调用toFixed()还是toExponential()
+
+string类型
+charAt(),charCodeAt() 访问字符串中了特定字符的方法
+charAt()返回给定位置的字符
+charCodeAt()返回给定位置的字符的字符编码
+slice(),substr(),substring() 返回被操作字符串的一个子字符串，第一个参数指定子字符串开始的位置
+slice()和substring() 第二个指定子字符串最后一个字符后面的位置，substr() 第二个参数指定位数
+indexOf(),lastIndexOf() 搜索给定的子字符串然后返回子字符串的位置，如果没有返回-1，第二个参数指定开始搜索的位置
+trim() 删除前后的所有空格
+toLowerCase() toLocaleLowerString() toUpperCase() toLocaleUpperString() 字符串大小写转换
+match() search() repalce() split() 用于正则表达式匹配字符串
+fromCharCode() 接收字符编码然后转换成一个字符串
+
+URL编码方法
+encodeURI() 不会对本身属于URL的特殊字符进行编码
+encodeURIComponent() 对任何非标准字符进行编码
+decodeURI() decodeURIComponent() 对编译的URL进行解码
+
+eval() 中创建的任何变量或函数都不会被提升，因为在解析代码的时候，它们被包含在一个字符串中，只在eval()执行的时候创建
+
+在全局作用域中声明的所有变量和函数，就都成为了window对象的函数
+
+Math对象
+Math.ceil() 执行向上舍入
+Math.floor() 执行向下舍入
+Math.round() 四舍五入
+Math.random() 返回0-1之间的一个随机数
+
+面向对象
+数据属性和访问器属性
+数据属性有4个描述其行为的特性:
+[[Configurable]] 能否通过delete删除属性从而重新定义属性，默认true
+[[Enumerable]] 能否通过for-in循环返回属性，默认true
+[[Writable]] 能否修改属性值，默认true
+[[Value]] 包含这个属性的数据值，默认undefined
