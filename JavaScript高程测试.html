@@ -157,7 +157,15 @@
         // var lp=Math.max.apply(Math, lo);
         // console.log(lp)
 
-        
+        var person={}
+        Object.defineProperty(person,"name",{
+            // writable: true,
+            configurable:false,
+            value:"wocao"
+        });
+        console.log(person.name);
+        person.name="nima";
+        console.log(person.name);
     </script>
     
 </body>

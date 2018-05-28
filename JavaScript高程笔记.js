@@ -238,3 +238,10 @@ Math.random() 返回0-1之间的一个随机数
 [[Enumerable]] 能否通过for-in循环返回属性，默认true
 [[Writable]] 能否修改属性值，默认true
 [[Value]] 包含这个属性的数据值，默认undefined
+object.defineProperty() 修改属性默认的特性
+访问器属性不包含数据值，包含 getter()和setter() 函数，同样具有4个特性：
+[[Configurable]] 能否被delete删除，能否修改属性特性或者修改为数据属性。默认true
+[[Enumerable]] 能否通过for-in 循环返回属性,默认true
+[[Get]] 读取属性时调用的函数，默认为undefined
+[[Set]] 写入属性时调用的函数，默认为undefined
+访问器属性不能直接定义，必须使用Obejct.defineProperty() 来定义
