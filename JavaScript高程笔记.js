@@ -245,3 +245,8 @@ object.defineProperty() 修改属性默认的特性
 [[Get]] 读取属性时调用的函数，默认为undefined
 [[Set]] 写入属性时调用的函数，默认为undefined
 访问器属性不能直接定义，必须使用Obejct.defineProperty() 来定义
+
+Object.defineProperties() 定义多个属性，第一个参数是要修改的对象，第二个参数为要修改或添加的属性
+
+Object.getOwnPropertyDescriptor() 取得给定属性的描述符，第一个参数是属性所在对象，第二个是要读取器描述符的属性名称
+
