@@ -166,6 +166,20 @@
         // console.log(person.name);
         // person.name="nima";
         // console.log(person.name);
+
+        function Person(name,age,job){
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.sayname=sayname;
+        }
+        function sayname(){
+            console.log(this.name)
+        }
+        var person1=new Person("woc",23,"fashuid");
+        var person2=new Person("nima",56,"fsdagrhweer");
+        person2.sayname();
+        person1.sayname();
     </script>
     
 </body>
