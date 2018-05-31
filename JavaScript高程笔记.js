@@ -253,3 +253,4 @@ Object.getOwnPropertyDescriptor() 取得给定属性的描述符，第一个参�
 任何函数只要通过new操作符来调用就可以作为构造函数
 
 每个函数都有一个prototype属性，这个属性指向一个对象，包含由特定类型的所有实例共享的属性和方法的对象
+所有原型对象都有constructor（构造函数）属性，通过constructor属性还可以继续为原型对象添加其他属性和方法
