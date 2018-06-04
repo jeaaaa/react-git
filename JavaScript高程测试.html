@@ -167,19 +167,59 @@
         // person.name="nima";
         // console.log(person.name);
 
-        function Person(name,age,job){
-            this.name=name;
-            this.age=age;
-            this.job=job;
-            this.sayname=sayname;
+        // function Person(name,age,job){
+        //     this.name=name;
+        //     this.age=age;
+        //     this.job=job;
+        //     this.sayname=sayname;
+        // }
+        // function sayname(){
+        //     console.log(this.name)
+        // }
+        // var person1=new Person("woc",23,"fashuid");
+        // var person2=new Person("nima",56,"fsdagrhweer");
+        // person2.sayname();
+        // person1.sayname();
+
+        // function Person(){
+        // }
+        // Person.prototype.name='woc0';
+        //     Person.prototype.age='20';
+        //     Person.prototype.job='sfdsa';
+        //     Person.prototype.sayName=function(){
+        //         alert(this.name)
+        // }
+        // var keys=Object.keys(Person.prototype);
+        // console.log(keys);
+        // var p1=new Person();
+        // var key=Object.keys(p1);
+        // console.log(key)
+
+        // function Person(name,job,age){
+        //     var o=new Object();
+        //     o.sayName=function(){
+        //         console.log(name)
+        //     }
+        //     return o;
+        // }
+        // var friend=Person('woc',09,'fgsyags')
+        // friend.sayName();
+
+        function type1(){
+            this.property1 = "1";
         }
-        function sayname(){
-            console.log(this.name)
+        type1.prototype.getType1Value=function(){
+            return this.property1;
         }
-        var person1=new Person("woc",23,"fashuid");
-        var person2=new Person("nima",56,"fsdagrhweer");
-        person2.sayname();
-        person1.sayname();
+        function type2(){
+            this.property2 = "2";
+        }
+        type2.prototype=new type1();
+        // type2.prototype.getType2Value=function(){
+        //     return this.property2;
+        // }
+        var lf=new type2();
+        console.log(lf.property2)
     </script>
     
 </body>
