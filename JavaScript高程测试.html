@@ -205,21 +205,83 @@
         // var friend=Person('woc',09,'fgsyags')
         // friend.sayName();
 
-        function type1(){
-            this.property1 = "1";
-        }
-        type1.prototype.getType1Value=function(){
-            return this.property1;
-        }
-        function type2(){
-            this.property2 = "2";
-        }
-        type2.prototype=new type1();
+        // function type1(){
+        //     this.property1 = "1";
+        // }
+        // type1.prototype.getType1Value=function(){
+        //     return this.property1;
+        // }
+        // function type2(){
+        //     this.property2 = "2";
+        // }
+        // type2.prototype=new type1();
         // type2.prototype.getType2Value=function(){
         //     return this.property2;
         // }
-        var lf=new type2();
-        console.log(lf.property2)
+        // var lf=new type2();
+        // console.log(lf.getType2Value())
+        // console.log(type1.prototype.isPrototypeOf(lf))
+
+        // function type1(){
+        //     this.property1 = "1";
+        // }
+        // type1.prototype.getType1Value=function(){
+        //     return this.property1;
+        // }
+        // function type2(){
+        //     this.property2 = "2";
+        // }
+        // type2.prototype=new type1();
+        // type2.prototype={
+        //     getType2Value:function(){
+        //         return this.property2
+        //     }
+        // }
+        // var lf=new type2();
+        // console.log(type2.prototype.isPrototypeOf(lf))
+        // console.log(lf.getType1Value())
+
+
+        // function SuperType(){
+        //     this.color=['red','blue','green','black'];
+        // }
+        // function SubType(){
+        //     //继承SuperType
+        //     SuperType.apply(this)
+        // }
+        // var lo=new SubType();
+        // lo.color.push('yellow');
+        // console.log(lo.color);
+        // var lp=new SubType();
+        // console.log(lp.color);
+
+        // function callType(name){
+        //     this.name=name;
+        // }
+        // function vallType(){
+        //     callType.call(this,'wpcad');
+        //     this.age='90';
+        // }
+        // var lk=new vallType();
+        // console.log(lk.name+lk.age);
+
+        function one(name,age){
+            this.name=name;
+            this.age=age;
+            this.color=['red','blue','green','black'];
+        }
+        one.prototype.sayName=function(){
+            console.log(this.name);
+        }
+        function tow(name,age,work){
+            one.call(this,name,age);
+            this.work=work;
+        }
+        var lp=new tow('woo',90,'wocao');
+        console.log(lp.age);
+        lp.color.push('yellow');
+        var lo=new tow('riokd',39,'nima');
+        console.log(lo.age)
     </script>
     
 </body>
