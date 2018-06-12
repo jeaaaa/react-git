@@ -265,23 +265,83 @@
         // var lk=new vallType();
         // console.log(lk.name+lk.age);
 
-        function one(name,age){
+        // function one(name,age){
+        //     this.name=name;
+        //     this.age=age;
+        //     this.color=['red','blue','green','black'];
+        // }
+        // one.prototype.sayName=function(){
+        //     console.log(this.name);
+        // }
+        // function tow(name,age,work){
+        //     one.call(this,name,age);
+        //     this.work=work;
+        // }
+        // // tow.prototype = new one();
+        // // tow.prototype.constructor=tow;
+        // var lp=new tow('woo',90,'wocao');
+        // lp.color.push('yellow');
+        //  console.log(lp.work);
+        // var lo=new tow('riokd',39,'nima');
+        // console.log(lo.color)
+        
+        // function ojbk(o){
+        //     function F(){}
+        //     F.prototype=o;
+        //     return o;
+        // }
+        // var person={
+        //     name:'wo',
+        //     friend:['q','w','e','r']
+        // }
+        // var anperson=Object.create(person);
+        // anperson.name="nima";
+        // anperson.friend.push('d');
+        // var yetperson=Object.create(person);
+        // yetperson.name="wotian";
+        // yetperson.friend.push('f')
+        // console.log(person.name);
+        // console.log(anperson.name);
+        // console.log(yetperson.name);
+
+        // function one(name){
+        //     this.name=name;
+        //     this.color=['red','blue','green','black'];
+        // }
+        // one.prototype.sayname=function(){
+        //     this.name=name
+        // }
+        // function tow(name,age){
+        //     one.call(this, name);
+        //     this.age=age;
+        // }
+        // tow.prototype = new one();
+        // tow.prototype.constructor=one;
+        // tow.prototype.sayage=function(){
+        //     this.age=age;
+        // }
+        // var lp=new tow('woc',78)
+        // console.log(lp.color)
+        
+        function inheritprototype(one,tow){
+            var prototype=Object(one,tow);
+            prototype.constructor=one;
+            one.prototype=prototype;
+        }
+        function one(name){
             this.name=name;
-            this.age=age;
             this.color=['red','blue','green','black'];
         }
-        one.prototype.sayName=function(){
-            console.log(this.name);
+        one.prototype.sayname=function(){
+            this.name=name
         }
-        function tow(name,age,work){
-            one.call(this,name,age);
-            this.work=work;
+        function tow(name,age){
+            one.call(this, name);
+            this.age=age;
         }
-        var lp=new tow('woo',90,'wocao');
-        console.log(lp.age);
-        lp.color.push('yellow');
-        var lo=new tow('riokd',39,'nima');
-        console.log(lo.age)
+        inheritprototype(one,tow);
+        var lp=new tow('nima',92);
+        console.log(lp.color+lp.age)
     </script>
     
 </body>

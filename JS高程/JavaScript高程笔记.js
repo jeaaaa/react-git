@@ -269,3 +269,8 @@ getOwnPropertyNames() 枚举对象的所有属性，包括默认属性
 每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针
 instanceof 和 isPrototypeOf() 确定原型和实例之间的关系
 isPrototypeOf() 只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型
+function object(o){
+	function F(){}
+	F.prototype=o;
+	return new F();
+}
