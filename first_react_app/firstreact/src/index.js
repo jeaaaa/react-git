@@ -1,7 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import ClickCounter from './ClickCounter.js';
+import $ from 'jquery'
+import videojs from 'video.js';
+import 'video.js/dist/video-js.css';
+
+const videoImg=$('.video-img')
+console.log(videoImg)
 
 
-ReactDOM.render(<ClickCounter />, document.getElementById('root'));
+
+
+
+
+
+
+// ReactDOM.render(<ClickCounter />, document.getElementById('root'));
