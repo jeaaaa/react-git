@@ -355,7 +355,24 @@
         }
         createFunction();
         // console.log(result)
+        var name="this.window";
+        var object={
+            name:"my object",
+            getNameFunc:function(){
+                var that=this;
+                return function(){
+                    return that.name;
+                }
+            }
+        }
+        console.log(object.getNameFunc()());
+
+        
+
+
+
+
+
     </script>
-    
 </body>
 </html>
