@@ -323,26 +323,44 @@
         // var lp=new tow('woc',78)
         // console.log(lp.color)
         
-        function inheritprototype(one,tow){
-            var prototype=Object(one,tow);
-            prototype.constructor=one;
-            one.prototype=prototype;
+        // function inheritprototype(one,tow){
+        //     var prototype=Object(one,tow);
+        //     prototype.constructor=one;
+        //     one.prototype=prototype;
+        // }
+        // function one(name){
+        //     this.name=name;
+        //     this.color=['red','blue','green','black'];
+        // }
+        // one.prototype.sayname=function(){
+        //     this.name=name
+        // }
+        // function tow(name,age){
+        //     one.call(this, name);
+        //     this.age=age;
+        // }
+        // inheritprototype(one,tow);
+        // var lp=new tow('nima',92);
+        // console.log(lp.color+lp.age)
+
+        var name="this.window";
+        var object={
+            name:"my object",
+            getNameFunc:function(){
+                var that=this;
+                return function(){
+                    return that.name;
+                }
+            }
         }
-        function one(name){
-            this.name=name;
-            this.color=['red','blue','green','black'];
-        }
-        one.prototype.sayname=function(){
-            this.name=name
-        }
-        function tow(name,age){
-            one.call(this, name);
-            this.age=age;
-        }
-        inheritprototype(one,tow);
-        var lp=new tow('nima',92);
-        console.log(lp.color+lp.age)
+        console.log(object.getNameFunc()());
+
+        
+
+
+
+
+
     </script>
-    
 </body>
 </html>
