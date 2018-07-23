@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span id="article">
+        fsAGEHRDGEJTW
+    </span>
+    <br>
+    <button id="copy">复制</button>
+    <script>
+        function copyArticle(event){
+            const range = document.createRange();
+            range.selectNode(document.getElementById('article'));
+            const selection = window.getSelection();
+            console.log(selection.rangeCount)
+            if(selection.rangeCount > 0){  //清空已有的对象
+                selection.removeAllRanges()
+            };
+            selection.addRange(range);
+            document.execCommand('copy');
+            alert('复制好了哦')
+        }
+    
+        document.getElementById('copy').addEventListener('click', copyArticle, false);
+    </script>
+</body>
+</html>
