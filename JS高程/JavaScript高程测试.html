@@ -344,29 +344,43 @@
         // console.log(lp.color+lp.age)
 
         
-        function createFunction(){
-            var result = new Array();
-            for(var i=0;i<10;i++){
-                result[i]=i
-            };
-            console.log(result)
-            return result;
+        // function createFunction(){
+        //     var result = new Array();
+        //     for(var i=0;i<10;i++){
+        //         result[i]=i
+        //     };
+        //     console.log(result)
+        //     return result;
             
-        }
-        createFunction();
-        // console.log(result)
-        var name="this.window";
-        var object={
-            name:"my object",
-            getNameFunc:function(){
-                var that=this;
-                return function(){
-                    return that.name;
-                }
+        // }
+        // createFunction();
+        // // console.log(result)
+        // var name="this.window";
+        // var object={
+        //     name:"my object",
+        //     getNameFunc:function(){
+        //         var that=this;
+        //         return function(){
+        //             return that.name;
+        //         }
+        //     }
+        // }
+        // console.log(object.getNameFunc()());
+
+        function myobject(){
+            var testa=10;
+            function testb(){
+                console.log(20)
+                return 20;
+            }
+            this.testc=function(){
+                console.log(testa,testb())
+                testa++;
+                return testb();
             }
         }
-        console.log(object.getNameFunc()());
-
+        myobject();
+        console.log(testc())
         
 
 
