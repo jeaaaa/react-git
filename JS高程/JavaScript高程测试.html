@@ -367,20 +367,35 @@
         // }
         // console.log(object.getNameFunc()());
 
-        function myobject(){
-            var testa=10;
-            function testb(){
-                console.log(20)
-                return 20;
+        // function myobject(){
+        //     var testa=10;
+        //     function testb(){
+        //         console.log(20)
+        //         return 20;
+        //     }
+        //     this.testc=function(){
+        //         console.log(testa,testb())
+        //         testa++;
+        //         return testb();
+        //     }
+        // }
+        // myobject();
+        // console.log(testc())
+
+        var application=function(){
+            var components=new Array();
+            components.push(new BaseComponent());
+            return {
+                getComponent:function(){
+                    return components.length;
+                },
+                registerComponent:function(){
+                    if(typeof component == "object"){
+                        components.push(component)
+                    }
+                }
             }
-            this.testc=function(){
-                console.log(testa,testb())
-                testa++;
-                return testb();
-            }
-        }
-        myobject();
-        console.log(testc())
+        }();
         
 
 
