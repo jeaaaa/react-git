@@ -290,3 +290,12 @@ arguments和this一样，把外部作用域中的this对象保存在一个闭包
 把有权访问私有变量和私有函数的公有方法称为特权方法
 
 全局变量不能通过delete操作符删除，直接在window对象上定义的属性可以delete删除
+
+outerHeight,outerWidth 返回浏览器窗口本身的尺寸
+innerHeight,innerWidth 返回页面视图区的大小
+document.documentElement.clientHeight,document.documentElement.clientWidth 页面视图区大小
+
+window.open() 可以导航到一个特定的url，也可以打开一个新的浏览器窗口
+
+setTimeout() 超时调用 setInterval() 间歇调用
+
