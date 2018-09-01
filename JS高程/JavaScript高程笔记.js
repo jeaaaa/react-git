@@ -299,3 +299,8 @@ window.open() 可以导航到一个特定的url，也可以打开一个新的浏
 
 setTimeout() 超时调用 setInterval() 间歇调用
 
+location.replace("heep://www.")	//重定向到某个地址，不进入历史记录
+location.reload()	//重新加载（有可能从缓存中加载）
+location.reload(true)	//重新加载（从服务器重新加载）
+
+navigator对象,用于识别浏览器
