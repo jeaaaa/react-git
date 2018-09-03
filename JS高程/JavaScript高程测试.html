@@ -456,7 +456,21 @@
             return t=='function'||(!!(t=='object'&& object[property]))||t=='unknown';
         }
         var hasNSPlugins=!!(navigator.plugins&&navigator.plugins.length);
-        console.log(hasNSPlugins)
+
+        //识别呈现引擎
+        var client=function(){
+            var engine={
+                ie:0,
+                gecko:0,
+                webkit:0,
+                khtml:0,
+                opera:0,
+                ver:null
+            };
+            return {
+                engine:engine
+            };
+        }();
     </script>
 </body>
 </html>
