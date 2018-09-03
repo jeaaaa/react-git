@@ -303,4 +303,8 @@ location.replace("heep://www.")	//重定向到某个地址，不进入历史记�
 location.reload()	//重新加载（有可能从缓存中加载）
 location.reload(true)	//重新加载（从服务器重新加载）
 
-navigator对象,用于识别浏览器
+navigator对象,用于识别客户端浏览器
+navigator.plugins	//浏览器中安装的插件信息数组
+
+screen对象，用于获取相关显示器及浏览器信息
+history对象，保存着用户上网的历史记录
