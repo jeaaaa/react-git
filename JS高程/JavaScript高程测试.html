@@ -431,46 +431,76 @@
         // }
 
         //检测插件
-        function hasPlugin(name){
-            name = name.toLowerCase();
-            for(var i=0;i<navigator.plugins.length;i++){
-                if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
-                    return true;
-                }
-            }
-            return false;
-        }
-        //检测IE中的插件
-        function hasIEPlugins(name){
-            try{
-                new ActiveXObject(name);
-                return true;
-            }catch(ex){
-                return false;
-            }
+        // function hasPlugin(name){
+        //     name = name.toLowerCase();
+        //     for(var i=0;i<navigator.plugins.length;i++){
+        //         if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
+        // //检测IE中的插件
+        // function hasIEPlugins(name){
+        //     try{
+        //         new ActiveXObject(name);
+        //         return true;
+        //     }catch(ex){
+        //         return false;
+        //     }
+        // }
+
+        // //能力检测
+        // function isHostMethod(object,property){
+        //     var t= typeof object[property];
+        //     return t=='function'||(!!(t=='object'&& object[property]))||t=='unknown';
+        // }
+        // var hasNSPlugins=!!(navigator.plugins&&navigator.plugins.length);
+
+        // //用户代理字符串检测
+        // //识别呈现引擎
+        // var client=function(){
+        //     var engine={
+        //         ie:0,
+        //         gecko:0,
+        //         webkit:0,
+        //         khtml:0,
+        //         opera:0,
+        //         ver:null
+        //     };
+        //     return {
+        //         engine:engine
+        //     };
+        // }();
+        // if(client.engine.ie){
+        //     console.log(ie)
+        // }else if(client.engine.gecko){
+        //     console.log(webkit)
+        // }else{
+        //     console.log('啥都不是')
+        // }
+
+        var ua=navigator.userAgent;
+        if(window.opera){
+            engine.ver=window.opera.version();
+            engine.opera=parseFloat(engine.ver);
+            console.log(engine.opera);
+        }else if(/AppleWebKit\/(\S+)/.test(ua)){
+            engine.ver = RegExp["$1"];
+            engine.webkit = parseFloat(engine.ver);
+            console.log(engine.webkit);
+        }else if(/KHTML\/(\S+)/.test(ua) || /Konqueror\/([^;]+)/.test(ua)){
+            engine.ver=RegExp["$1"];
+            engine.kthml=parseFloat(engine.ver);
+            console.log(engine.khtml);
+        }else if( /rv:([^\)]+)\)gecko\/\d{8}/.test(ua) ){
+            //查找所有不是闭括号的字符，和gecko后跟的8个数字
+            engine.ver=RegExp["$1"]
+            engine.gecko=parseFloat(engine.ver)
         }
 
-        //能力检测
-        function isHostMethod(object,property){
-            var t= typeof object[property];
-            return t=='function'||(!!(t=='object'&& object[property]))||t=='unknown';
-        }
-        var hasNSPlugins=!!(navigator.plugins&&navigator.plugins.length);
+        
 
-        //识别呈现引擎
-        var client=function(){
-            var engine={
-                ie:0,
-                gecko:0,
-                webkit:0,
-                khtml:0,
-                opera:0,
-                ver:null
-            };
-            return {
-                engine:engine
-            };
-        }();
     </script>
 </body>
 </html>
