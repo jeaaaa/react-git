@@ -480,7 +480,9 @@
         //     console.log('啥都不是')
         // }
 
+        //识别呈现引擎
         var ua=navigator.userAgent;
+        var engine=new Object();
         if(window.opera){
             engine.ver=window.opera.version();
             engine.opera=parseFloat(engine.ver);
@@ -495,10 +497,17 @@
             console.log(engine.khtml);
         }else if( /rv:([^\)]+)\)gecko\/\d{8}/.test(ua) ){
             //查找所有不是闭括号的字符，和gecko后跟的8个数字
-            engine.ver=RegExp["$1"]
-            engine.gecko=parseFloat(engine.ver)
+            engine.ver=RegExp["$1"];
+            engine.gecko=parseFloat(engine.ver);
+            console.log(engine.gecko);
+        }else if( /MSIE([^;]+)/.test(ua)){
+            engine.var=RegExp["$1"];
+            engine.ie = parseFloat(engine.ver);
+            console.log(engine.ie);
         }
-
+        
+        //识别浏览器
+        
         
 
     </script>
