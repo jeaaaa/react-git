@@ -313,4 +313,44 @@ history对象，保存着用户上网的历史记录
 怪癖检测：浏览器实现中存在的bug
 一般优先考虑使用能力检测，其次是怪癖检测，用户代理检测是客户端检测的最后一种方案，因为这种方法对用户代理字符串具有很强的依赖性
 
+DOM
+每个节点都有一个nodetype属性，
+previousSibling 前一个兄弟节点
+nextSibling 后一个兄弟节点
+parentNode 父节点
+操作节点
+appendChild() 用于向节点列表的末尾添加一个节点
+insertBefore() 把节点放在列表中某个特定的位置上，接受两个参数：要插入的节点和作为参照的节点
+replaceChild() 接受两个参数：要插入的节点和要替换的节点
+removeChild() 移除节点
+cloneNode() 复制节点，true进行深复制即包含子节点，false进行浅复制只复制节点本身
+
+document对象是HTMLDcument的一个实例，表示整个HTML页面
+Document节点具有下列特征：
+nodeType的值为 9
+nodeName的值为 "#document"
+nodeValue的值为 null
+parentNode 的值为 null
+ownerDocument 的值为 null
+其子节点可能是一个DocumentType（最多一个），Element（最多一个），ProcessingInstruction或Comment
+
+<html>
+	<body>
+
+	</body>
+</html>
+var heml = document.documentElement;  //取得对HTML的引用
+console.log( html==document.childNodes[0])  //true
+console.log(html == document.firstChild);	//true
+都指向html
+
+var body = document.body   //取得<body>
+var doctype = doctype.doctype	//取得<! DOCTYPE>的引用
+
+document.title
+document.URL //页面完整url
+document.domain	//页面域名
+document.referrer	//保存着链接到当前页面的那个页面的URL
+
+设置document.domain，使得两个页面能相互访问对方的JavaScript对象
 
