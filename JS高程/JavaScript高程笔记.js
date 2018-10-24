@@ -313,7 +313,7 @@ history对象，保存着用户上网的历史记录
 怪癖检测：浏览器实现中存在的bug
 一般优先考虑使用能力检测，其次是怪癖检测，用户代理检测是客户端检测的最后一种方案，因为这种方法对用户代理字符串具有很强的依赖性
 
-DOM
+第十章DOM
 每个节点都有一个nodetype属性，
 previousSibling 前一个兄弟节点
 nextSibling 后一个兄弟节点
@@ -321,7 +321,7 @@ parentNode 父节点
 操作节点
 appendChild() 用于向节点列表的末尾添加一个节点
 insertBefore() 把节点放在列表中某个特定的位置上，接受两个参数：要插入的节点和作为参照的节点
-replaceChild() 接受两个参数：要插入的节点和要替换的节点
+replaceChild() 接受两个参数：要插入的节点和要替换的节点，替换节点
 removeChild() 移除节点
 cloneNode() 复制节点，true进行深复制即包含子节点，false进行浅复制只复制节点本身
 
@@ -352,5 +352,14 @@ document.URL //页面完整url
 document.domain	//页面域名
 document.referrer	//保存着链接到当前页面的那个页面的URL
 
-设置document.domain，使得两个页面能相互访问对方的JavaScript对象
+var referrer=document.referrer	//取得来源页面的url
 
+设置document.domain，使得两个页面能相互访问对方的JavaScript对象
+将document.domain设置为jea.com后，就不能将其设置回www.jea.com，只能由松散到紧绷，不能由紧绷到松散
+
+查找元素
+document.anchors	//文档中所有带name特性的<a>元素
+document.links		//文档中所有带href特性的<a>元素
+
+var div=document.getElementById('id')
+div.getAttribute('own')		//取得div的特性包括自定义的
