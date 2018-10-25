@@ -361,5 +361,8 @@ var referrer=document.referrer	//取得来源页面的url
 document.anchors	//文档中所有带name特性的<a>元素
 document.links		//文档中所有带href特性的<a>元素
 
+getAttribute, setAttribute, removeAttribute 操作特性
 var div=document.getElementById('id')
 div.getAttribute('own')		//取得div的特性包括自定义的
+
+document.createElement() //创建新元素
