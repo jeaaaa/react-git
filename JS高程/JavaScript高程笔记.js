@@ -366,3 +366,32 @@ var div=document.getElementById('id')
 div.getAttribute('own')		//取得div的特性包括自定义的
 
 document.createElement() //创建新元素
+childNodes 元素子节点
+ul.getElementByTagName("li")	//取得ul包含的所有li元素
+
+Text类型：
+nodeType的值为3,
+nodeName的值为"#text",
+nodeValue的值为节点所包含的文本,
+parentNode是一个Element,
+
+document.createTextNode() //创建新文本节点
+element.normalize() //合并相邻文本节点
+element.splitText()	//分割文本节点，指定分割位置，原文本节点包含从开始到指定位置之前的内容，新文节点包含剩下的内容
+
+Comment类型：
+//继承自text类型
+nodeType的值为8，
+nodeName的值为"#comment",
+nodeValue的值是注释的内容
+parentNode可能是Document或Element
+
+CDATASection类型：
+//只针对基于XML的文档，表示的是CDATA区域，继承自text类型
+nodeType的值为4,
+nodeName的值为"#cdata-section",
+nodeValue的值为CDATA区域中的内容，
+parentNode可能是Document或Element
+
+DcomentType类型：
+//仅有Firefox、Safari、Opera支持他
