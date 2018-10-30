@@ -395,3 +395,22 @@ parentNode可能是Document或Element
 
 DcomentType类型：
 //仅有Firefox、Safari、Opera支持他
+nodeType的值为10,
+nodeName的值为doctype的名称，
+nodeValue的值为null,
+parentNode是Document
+
+DocumentFragment类型
+//作为‘仓库’临时储存创建的文档节点，然后再添加到DOM，
+var fragment=document.createDocumentFragment();
+var ul=document.getElementById('mylist');
+var li=null;
+for (var i=0;i<3;i++){
+	li = document.createElement("li");
+	li.appendChild(document.createTextNode("item"+(i+1)));
+	fragment.appendChild(li);
+}
+ul.appendChild(fragment);
+
+Attr类型
+//元素的特性，存在于元素的attributes属性中的节点
