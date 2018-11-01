@@ -414,3 +414,6 @@ ul.appendChild(fragment);
 
 Attr类型
 //元素的特性，存在于元素的attributes属性中的节点
+
+try{}catch{} 语句将能引发错误的代码放在try块中，并且对应一个响应，然后有异常被抛出。
+
