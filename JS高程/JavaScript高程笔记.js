@@ -415,5 +415,21 @@ ul.appendChild(fragment);
 Attr类型
 //元素的特性，存在于元素的attributes属性中的节点
 
-try{}catch{} 语句将能引发错误的代码放在try块中，并且对应一个响应，然后有异常被抛出。
+try{}catch{} 
+//语句将能引发错误的代码放在try块中，并且对应一个响应，然后有异常被抛出。
 
+DOM扩展
+querySelector()		//接受一个CSS选择符，返回与该模式匹配的第一个元素
+var myclass = document.querySelector('.class')
+
+querySelecotAll()	//接受一个CSS选择符，返回带有所有属性和方法的nodelist
+
+元素遍历
+childElementCount	//返回子元素
+firstElementChild	//指向第一个子元素，firstChild的元素版
+lastElementChild	//指向最后一个子元素,lastChild的元素版
+previousElementSibling	//指向前一个同辈元素，previonsSibling的元素版
+nextElementSibling	//指向后一个同辈元素，nextSibling的元素版
+
+HTML5
+getElementsByClassName()	
