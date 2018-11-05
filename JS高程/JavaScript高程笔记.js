@@ -433,3 +433,21 @@ nextElementSibling	//指向后一个同辈元素，nextSibling的元素版
 
 HTML5
 getElementsByClassName()	
+classList	//操作类名
+div.classList.remove('disabled')
+div.classList.add('new')
+div.classList.toggle('new')	//切换类
+div.classList.contains('new')	//列表中是否存在给定的值，存在返回true
+
+document.activeElement	//始终引用DOM中当前获得了焦点的元素
+document.hasFocus()		//用于文档是否获得了焦点
+document.readyState		//loading 正在加载文档 complete 已经加载完文档
+document.compatMode		//检测渲染页面的模式   CSS1Compat 标准模式 BackCompat 混杂模式
+document.head		//引用文档的<head>元素
+document.charset	//文档字符集
+document.defaultCharset		//根据浏览器及操作系统的设置
+
+//自定义数据属性，前缀必须为data-，可以通过dataset来访问自定义属性的值
+var id=div.dataset.id
+
+innerHTML()
