@@ -473,3 +473,13 @@ scrollIntoView()
 通过滚动浏览器窗口或某个容器元素，调用元素就可以出现在视口中
 
 document.documentMode 知道给定页面使用的是什么文档模式
+
+children属性
+只包含元素中同样还是元素的子节点
+var children=element.children.length
+
+contains()方法
+知道某个节点是不是另一个节点的后代，祖先节点调用、传入要检测的后代节点，返回true或false
+
+compareDocumentPosition()
+确定节点间的关系，返回掩码1：无关、2：居前、4：居后、8：包含、16：被包含
