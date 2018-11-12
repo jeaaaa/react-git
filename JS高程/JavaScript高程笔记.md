@@ -451,3 +451,25 @@ document.defaultCharset		//根据浏览器及操作系统的设置
 var id=div.dataset.id
 
 innerHTML()
+如果想插入脚本必须在前面添加一个“有作用域的元素”
+不支持innerHTML的元素有<col>,<colgroup>,<fragment>,<head>,<html>,<style>,<table>,<tbody>,<thead>,<tfoot>,<tr>
+
+outerHTML
+读模式下，返回调用它的元素及所有子节点的HTML标签
+写模式下，会根据指定的HTML字符串创建新的DOM子树，然后用这个DOM子树完全替换调用元素
+
+insertAdjacentHTML() 接受两个参数
+beforebegin	在当前元素之前插入一个紧邻的同辈元素
+afterbegin	在当前元素之下插入一个新的子元素或在第一个子元素之前再插入新的子元素
+beforebegin	在当前元素之下插入一个新的子元素或在最后一个子元素之后再插入新的子元素
+afterbegin	在当前元素之后插入一个紧邻的同辈元素
+第二个参数是一个HTML字符串
+
+内存与性能建议
+在移除DOM节点时，最好先手工删除要被替换的元素的所有事件处理程序和JavaScript对象属性
+最好是单独构建字符串，然后再一次性的讲结果字符串赋值给innerHTML
+
+scrollIntoView()
+通过滚动浏览器窗口或某个容器元素，调用元素就可以出现在视口中
+
+document.documentMode 知道给定页面使用的是什么文档模式
