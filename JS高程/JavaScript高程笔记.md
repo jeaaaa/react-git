@@ -483,3 +483,33 @@ contains()方法
 
 compareDocumentPosition()
 确定节点间的关系，返回掩码1：无关、2：居前、4：居后、8：包含、16：被包含
+
+innerText()
+操作元素中包含的所有文本内容
+
+scrollIntoView()	滚动
+
+DOM2级和DOM3级
+var modName = "HTML";
+var modVer = "2.0";
+var conformTest = document.implementation.hasFeature( modName, modVer );
+//document.implementation.hasFeature 确定浏览器是否支持这些DOM模块
+
+命名空间
+isDefaultNamespace(namespaceURI): 在指定的namespaceURI是当前节点的默认命名空间的情况下返回true
+lookupNamespaceURI(prefix):	返回给定prefix的命名空间
+lookupPrefix(namespaceURl): 返回给定的namespaceURL的前缀
+在取得了一个节点，但不知道该节点与文档其他元素之间关系的情况下这些方法是很有用的
+
+DOM2级样式
+cssText	访问到style中的CSS代码
+length	应用给元素的CSS属性的数量
+parentRule	表示CSS信息的CSSRule对象
+getPropertyCSSValue(propertyName)	返回包含给定属性值的CSSValue对象
+getPropertyPriority(propertyName)	如果给定的属性使用了!important 设置，则返回important，否则返回空字符串
+getPropertyValue(propertyName)	返回给定属性的字符串值
+item(index)	返回给定位置的css属性的名称
+removeProperty(propertyName)	从样式中删除给定的属性
+setProperty(propertyName,value,priority)	将给定属性设置为相应的值，并加上优先权标志
+
+设置cssText 是为元素应用多项变化最快捷的方式，因为可以一次性的引用所有变化
