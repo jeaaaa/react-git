@@ -513,3 +513,16 @@ removeProperty(propertyName)	从样式中删除给定的属性
 setProperty(propertyName,value,priority)	将给定属性设置为相应的值，并加上优先权标志
 
 设置cssText 是为元素应用多项变化最快捷的方式，因为可以一次性的引用所有变化
+
+计算的样式
+getComputedStyle()	接收两个参数：要取得计算样式的元素和一个伪元素字符串（可以为null）
+IE不支持getComputedStyle(),currentStyle属性，包含当前元素全部计算后的样式
+
+操作样式表
+CSSStyleSheet类型表示的是样式表
+for(let i;i<document.styleSheets.length;i++){
+	let sheet=document.styleSheet[i]
+}
+循环出文档中使用的每个样式表
+
+元素大小
