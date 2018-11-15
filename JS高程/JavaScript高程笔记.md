@@ -526,3 +526,26 @@ for(let i;i<document.styleSheets.length;i++){
 循环出文档中使用的每个样式表
 
 元素大小
+偏移量
+offsetHeight	元素在垂直方向上占用的空间大小，以像素计。包括元素的高度，水平滚动条的高度，上下边框高度
+offsetWidth		元素在水平方向上占用的空间大小，以像素计。包括元素的宽度，垂直滚动条的宽度，左右边框宽度
+offsetLeft		元素的左外边框至包含元素的左内边框之间的像素距离
+offsetTop		元素的上外边框至包含元素的上内边框之间的像素距离
+
+客户区大小
+指的是元素内容及其内边距所占据的空间大小，clientWidth/clientHeight
+由document.documentElment或document.body能确定浏览器视口大小
+
+滚动大小
+指的是包含滚动内容的元素的大小
+scrollHeight	在没有滚动条的情况下，元素内容的总高度
+scrollWidth		在没有滚动条的情况下，元素内容的总宽度
+scrollLeft		被隐藏在内容区域左侧的像素数。通过设置这个属性可以改变元素的滚动位置
+scrollTop		被隐藏在内容区域上方的像素数。通过设置这个属性可以改变元素的滚动位置
+document.documentElement.scrollHeight	带有垂直滚动条的页面总高度
+
+确定元素大小
+getBoundingClientRect()方法返回一个矩形对象，包含left，right，height，width四个属性，给出了元素在页面中相对于视口的位置
+
+遍历
+顺序遍历DOM结构的类型：NodeIterator和TreeWalker，基于给定的起点对DOM结构执行深度优先的遍历操作
